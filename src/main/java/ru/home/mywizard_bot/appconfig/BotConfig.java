@@ -19,18 +19,10 @@ public class BotConfig {
     private String botUserName;
     private String botToken;
 
-    private DefaultBotOptions.ProxyType proxyType;
-    private String proxyHost;
-    private int proxyPort;
-
     @Bean
     public MyWizardTelegramBot MySuperTelegramBot() {
         DefaultBotOptions options = ApiContext
                 .getInstance(DefaultBotOptions.class);
-
-        options.setProxyHost(proxyHost);
-        options.setProxyPort(proxyPort);
-        options.setProxyType(proxyType);
 
         MyWizardTelegramBot mySuperTelegramBot = new MyWizardTelegramBot(options);
         mySuperTelegramBot.setBotUserName(botUserName);
